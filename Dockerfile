@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose the server port
-EXPOSE 8080
+EXPOSE 80
 
 # Command to start the server
 CMD ["gunicorn", "-b", "0.0.0.0:8080", "app:app"]
