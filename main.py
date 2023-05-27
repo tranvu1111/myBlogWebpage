@@ -1,5 +1,5 @@
 import functools
-
+import os
 import flask
 from flask import Flask, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
@@ -17,7 +17,7 @@ from forms import CreatePostForm , RegisterForm
 from flask_gravatar import Gravatar
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ["MY_BLOG_SECRET_KEY"]
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
